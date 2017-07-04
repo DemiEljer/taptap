@@ -1,23 +1,3 @@
-function addScore() {
-	var contentText = document.querySelector('#count');
-    if (contentText.innerHTML === "true") {
-    	var level = Number(document.querySelector('#level'));
-        contentText = document.querySelector('#content-text');
-        var score = Number(contentText.innerHTML) + 1 * level;
-        contentText.innerHTML = score;
-        contentText.innerHTML = contentText.innerHTML;
-        contentText = document.querySelector('#scoreSavior');
-        contentText.innerHTML = score;
-        if (score > level * level) {
-        	level++;
-        	contentText = document.querySelector('#level');
-        	contentText.innerHTML = level;
-        }
-       // contentText.innerHTML = (contentText.innerHTML === "Basic") ? "Tizen" : "Basic";
-    }
-};
-
-
 window.onload = function() {
     // TODO:: Do your initialization job
 
@@ -48,13 +28,32 @@ window.onload = function() {
 };
 
 
-/*function showScore() {
-	 var contentText = contentText = document.querySelector('#scoreSavior');
-     var score = Number(contentText.innerHTML);
-     contentText = document.querySelector('#content-text');
-     contentText.innerHTML = score;
-     contentText = document.querySelector('#count');
-     contentText.innerHTML = "true";
+
+function incScore() {
+	var countText = document.querySelector('#count');
+    if (countText.innerHTML === "true") {
+    	var levelText = document.querySelector('#level');
+    	var level = Number(levelText);
+        var contentText = document.querySelector('#content-text');
+        var score = Number(contentText.innerHTML) + 1 * level;
+        contentText.innerHTML = score;
+        contentText.innerHTML = contentText.innerHTML;
+        contentText = document.querySelector('#scoreSavior');
+        contentText.innerHTML = score;
+        if (score > level * level + 1) {
+        	level += 1;
+        	levelText.innerHTML = level;
+        }
+    }
+}
+
+function showScore() {
+	var contentText = document.querySelector('#scoreSavior');
+	var score = Number(contentText.innerHTML);
+	contentText = document.querySelector('#content-text');
+	contentText.innerHTML = score;
+	contentText = document.querySelector('#count');
+	contentText.innerHTML = "true";
 }
 
 function showResolution() {
@@ -62,5 +61,7 @@ function showResolution() {
 	contentText.innerHTML = "false";
 	contentText = document.querySelector('#content-text');
 	contentText.innerHTML = window.screen.height + " x " + window.screen.width;
-}*/
+}
+
+
 
